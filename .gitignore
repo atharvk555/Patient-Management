@@ -16,6 +16,8 @@ logs/
 /bin/
 /out/
 /api-requests/
+/grpc-request/
+/database/
 
 # Maven
 /.mvn/
