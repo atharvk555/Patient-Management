@@ -6,7 +6,7 @@ import com.atharv.patientservice.dto.PatientResponseDTO;
 import com.atharv.patientservice.exception.EmailAlreadyExistsException;
 import com.atharv.patientservice.exception.PatientNotFoundException;
 import com.atharv.patientservice.grpc.BillingServiceGrpcClient;
-import com.atharv.patientservice.kafka.kafkaProducer;
+import com.atharv.patientservice.kafka.KafkaProducer;
 import com.atharv.patientservice.mapper.PatientMapper;
 import com.atharv.patientservice.mapper.PatientPatchMapper;
 import com.atharv.patientservice.model.Patient;
@@ -14,7 +14,6 @@ import com.atharv.patientservice.repository.PatientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,7 +24,7 @@ public class PatientService {
     private final PatientRepository patientRepository;
     private final PatientPatchMapper patientPatchMapper;
     private final BillingServiceGrpcClient billingServiceGrpcClient;
-    private final kafkaProducer kafkaProducer;
+    private final KafkaProducer kafkaProducer;
 
     public List<PatientResponseDTO> getPatients() {
         List<Patient> patients = patientRepository.findAll();

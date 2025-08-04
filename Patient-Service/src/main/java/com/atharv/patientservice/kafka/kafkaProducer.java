@@ -10,7 +10,7 @@ import patient.events.PatientEvent;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class kafkaProducer {
+public class KafkaProducer {
 
     private final KafkaTemplate<String, byte[]> kafkaTemplate;
 
