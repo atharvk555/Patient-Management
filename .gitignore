@@ -18,6 +18,7 @@ logs/
 /api-requests/
 /grpc-request/
 /database/
+/authdb/
 
 # Maven
 /.mvn/
