@@ -8,7 +8,7 @@ It supports local development with Docker and production-grade deployment with C
 ## 1. High-Level Architecture
 
 ### AWS Production Deployment
-![AWS Infrastructure](readme_assets/img.png)
+![AWS Infrastructure](readme_assests/img.png)
 
 **Key Components**
 - **Frontend Client** → **Application Load Balancer (Public Subnet)** → **API Gateway (ECS Task)**
@@ -23,7 +23,7 @@ It supports local development with Docker and production-grade deployment with C
 ---
 
 ### Local Development (Docker Network)
-![Docker Network](readme_assets/img_1.png)
+![Docker Network](readme_assests/img_1.png)
 
 - All services run as Docker containers on a single bridge network
 - Kafka topic `patients`
@@ -59,5 +59,4 @@ It supports local development with Docker and production-grade deployment with C
 ---
 
 
-# Start local environment
-docker compose up -d --build
+
