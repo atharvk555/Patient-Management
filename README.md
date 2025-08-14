@@ -1,7 +1,7 @@
 # Patient Management System — Microservices with Java Spring Boot & AWS
 
 A production-ready **Patient Management System** implemented with **Java Spring Boot** using a **microservices architecture**, deployed securely on **AWS ECS Fargate** with **RDS**, **MSK (Kafka)**, and an **Application Load Balancer (ALB)**.  
-It supports local development with Docker and production-grade deployment with CI/CD, observability, and security best practices.
+It supports local development with Docker and production-grade deployment with security best practices.
 
 ---
 
@@ -18,7 +18,7 @@ It supports local development with Docker and production-grade deployment with C
 - **MSK (Kafka)** → topic `patients`
   - Produced by **Patient Service**
   - Consumed by **Analytics Service** and **Notification Service**
-- Private subnets for ECS, RDS, MSK; ALB in public subnets
+- Private subnets for ECS, RDS, MSK; ELB in public subnets
 
 ---
 
@@ -34,12 +34,12 @@ It supports local development with Docker and production-grade deployment with C
 
 ## 2. Microservices Overview
 
-- **API Gateway** — REST entrypoint, auth token verification, routing, rate limiting
+- **API Gateway** — REST entrypoint, auth token verification, routing
 - **Auth Service** — user authentication, JWT issuance, RDS persistence
 - **Patient Service** — patient CRUD, Kafka producer, gRPC client to Billing
 - **Billing Service** — gRPC server, billing calculations, invoice generation
 - **Analytics Service** — Kafka consumer, processes patient events for reports
-- **Notification Service** — Kafka consumer, sends alerts via email/SMS/webhook
+- **Notification Service** — Kafka consumer, sends alerts via email/SMS
 
 ---
 
@@ -51,10 +51,8 @@ It supports local development with Docker and production-grade deployment with C
 - **Communication**: gRPC with Protobuf
 - **Containers**: Docker, AWS ECS Fargate
 - **Infrastructure**: AWS VPC, ALB, RDS, MSK, Security Groups
-- **IaC**: Terraform / AWS CDK
-- **CI/CD**: GitHub Actions
-- **Observability**: OpenTelemetry, CloudWatch, Prometheus
-- **Security**: JWT, TLS, AWS Secrets Manager
+- **IaC**: AWS CDK
+- **Security**: JWT
 
 ---
 
